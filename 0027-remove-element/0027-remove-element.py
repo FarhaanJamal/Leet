@@ -1,17 +1,14 @@
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        k = 0
-        for i in range(len(nums)):
+        i, k = 0, 0
+        while i < len(nums):
             if nums[i] != val:
-                k += 1
-        i=0
-        while i<=k:
-            try:
-                if nums[i] == val:
+                if nums[i] != '_': k += 1
+                i += 1
+            else:
+                try:
                     nums.remove(val)
                     nums.append("_")
-                else:
-                    i += 1
-            except IndexError:
-                break 
+                except IndexError:
+                    break  
         return k
