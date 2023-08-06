@@ -19,7 +19,6 @@ class Solution:
                 except KeyError:
                     dct[d_i+1] = [mx]
             try:
-                if max(dct[d_i+1]) >= len(nums)-1:
-                    return d_i+1
+                if max(dct[d_i+1]) >= len(nums)-1: return d_i+1
             except:
                 pass
